@@ -1,7 +1,10 @@
 package com.mana.francebasket;
 
 
-import android.annotation.SuppressLint;
+import com.mana.francebasket.adapter.ClassementAdapter;
+import com.mana.francebasket.model.ffbb.ChampionnatDetail;
+import com.mana.francebasket.service.WebService;
+
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,12 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.mana.francebasket.adapter.ClassementAdapter;
-import com.mana.francebasket.model.ffbb.ChampionnatDetail;
-import com.mana.francebasket.service.WebService;
 
-
-@SuppressLint("ValidFragment")
 public class MesResultatsFragment extends Fragment {
 
 	private ListView mList;

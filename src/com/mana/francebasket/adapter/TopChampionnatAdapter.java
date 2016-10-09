@@ -11,11 +11,12 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.mana.francebasket.model.ffbb.Championnat;
+import com.mana.francebasket.model.ffbb.Values;
 
 
-public class TopChampionnatAdapter extends ArrayAdapter<Championnat> {
+public class TopChampionnatAdapter extends ArrayAdapter<Values> {
 
-	public TopChampionnatAdapter(Context context,int textViewResourceId, ArrayList<Championnat> objects) {		
+	public TopChampionnatAdapter(Context context,int textViewResourceId, ArrayList<Values> objects) {		
 		super(context, textViewResourceId, objects);
 	}
 
@@ -23,7 +24,7 @@ public class TopChampionnatAdapter extends ArrayAdapter<Championnat> {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ViewHolder viewHolder;
 
-		Championnat championnat = getItem(position);
+		Values championnat = getItem(position);
 
 		if (convertView == null) {
 			viewHolder = new ViewHolder();
