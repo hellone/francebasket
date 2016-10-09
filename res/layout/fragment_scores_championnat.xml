@@ -1,0 +1,36 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:clickable="false"
+    android:duplicateParentState="true"
+    android:focusableInTouchMode="false"
+    android:longClickable="false"
+    android:orientation="horizontal"
+    android:paddingBottom="6dip"
+    android:paddingTop="4dip"
+    android:background="@drawable/background_listview" >
+
+    <TextView
+        android:id="@+id/equipe_name_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight=".4"
+        android:gravity="left"
+        android:paddingLeft="10dp" />
+ 
+    <TextView
+        android:id="@+id/scores"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight=".5"
+        android:gravity="center" />
+ 
+    <TextView
+        android:id="@+id/equipe_name_visitor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight=".4"
+        android:gravity="left" />
+ 
+</LinearLayout>

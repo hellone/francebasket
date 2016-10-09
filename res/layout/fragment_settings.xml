@@ -1,0 +1,36 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    android:paddingBottom="6dip"
+    android:paddingTop="4dip" 
+    android:background="@drawable/background_listview">
+
+    <TextView
+        android:id="@+id/championnat_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="17dp"
+        android:gravity="center"
+        android:paddingLeft="15dp" />
+
+<!--     <TextView -->
+<!--         android:id="@+id/group_id" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_alignBaseline="@+id/scores" -->
+<!--         android:layout_alignBottom="@+id/scores" -->
+<!--         android:layout_marginLeft="17dp" /> -->
+
+<!--     <TextView -->
+<!--         android:id="@+id/id" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_below="@+id/equipe_name_home" -->
+<!--         android:layout_marginLeft="17dp" /> -->
+
+</RelativeLayout>
