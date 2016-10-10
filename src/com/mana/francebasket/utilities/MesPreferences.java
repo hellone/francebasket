@@ -54,6 +54,7 @@ public class MesPreferences {
 		if(settings == null)
 			settings = new ChampionnatsSettings();
 
+		//TODO Vérifier que le championnat d'y est déjà pas
 		settings.add(new ChampionnatPreference(id, groupId, championnatName, championnatLibelle));
 
 

@@ -193,11 +193,11 @@ public class FragmentDetail extends Fragment {
 				
 				if(groupIdMemory.equals(groupId)){
 					
-					System.out.println(" Sauvegarde championnat : " + championnatName + "  pere  : " + ChampionnatsFragment.championnatPere);
-					MesPreferences.addChampionnatToPreference(getActivity(), id, groupId, championnatName, ChampionnatsFragment.championnatPere.toString());
-					showToast("Ajout du Championnat id = " + id + " dans les preferences");
-					
-					ViewManager.openScoreChampionnatView(getActivity(), id, groupId);	
+//					System.out.println(" Sauvegarde championnat : " + championnatName + "  pere  : " + ChampionnatsFragment.championnatPere);
+//					MesPreferences.addChampionnatToPreference(getActivity(), id, groupId, championnatName, ChampionnatsFragment.championnatPere.toString());
+//					showToast("Ajout du Championnat id = " + id + " dans les preferences");
+//					
+					ViewManager.openScoreChampionnatView(getActivity(), id, groupId, championnatName, ChampionnatsFragment.championnatPere.toString());	
 				}
 				//Si plus d'un Groupe, j'affiche la liste des groupes, sinon j'affiche les r�sulats
 				else if(result.getGroups().getValues().size() > 1 )
@@ -234,10 +234,10 @@ public class FragmentDetail extends Fragment {
 				else{
 //					MaDialogBox dialog = new MaDialogBox();
 //					dialog.show(getActivity().getSupportFragmentManager(), "1");
-					System.out.println(" Sauvegarde championnat : " + championnatName + "  pere  : " + ChampionnatsFragment.championnatPere);
-					MesPreferences.addChampionnatToPreference(getActivity(), id, "", championnatName, ChampionnatsFragment.championnatPere.toString());
-					showToast("Ajout du Championnat id = " + id + " dans les preferences");
-					ViewManager.openScoreChampionnatView(getActivity(), id, groupId);
+//					System.out.println(" Sauvegarde championnat : " + championnatName + "  pere  : " + ChampionnatsFragment.championnatPere);
+//					MesPreferences.addChampionnatToPreference(getActivity(), id, "", championnatName, ChampionnatsFragment.championnatPere.toString());
+//					showToast("Ajout du Championnat id = " + id + " dans les preferences");
+					ViewManager.openScoreChampionnatView(getActivity(), id, "", championnatName, ChampionnatsFragment.championnatPere.toString());
 				}
 		}
 

@@ -17,8 +17,8 @@ import android.support.v4.app.FragmentTransaction;
 public class ViewManager {
 
 	
-	public static void openScoreChampionnatView(Activity activity, final String id, final String groupId) {
-		Fragment scoreChampionnatFragment = new ScoreChampionnatFragment(id, groupId);  
+	public static void openScoreChampionnatView(Activity activity, final String id, final String groupId, String championnatName, String championnatPere) {
+		Fragment scoreChampionnatFragment = new ScoreChampionnatFragment(id, groupId, championnatName, championnatPere);  
 		FragmentManager fragmentManager = ((FragmentActivity)activity).getSupportFragmentManager();  
 		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();  
 

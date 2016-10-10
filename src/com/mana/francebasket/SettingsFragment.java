@@ -93,7 +93,7 @@ public class SettingsFragment extends Fragment {
 						
 						ChampionnatPreference setting = result.getSettings().get(position);
 						
-						ViewManager.openScoreChampionnatView(getActivity(), setting.getId(), setting.getGroupId());							
+						ViewManager.openScoreChampionnatView(getActivity(), setting.getId(), setting.getGroupId(), setting.getChampionnatName(), ChampionnatsFragment.championnatPere.toString());							
 					}
 				});
 			}	
