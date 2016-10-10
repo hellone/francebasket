@@ -2,6 +2,7 @@ package com.mana.francebasket;
 
 import java.util.ArrayList;
 
+import com.mana.francebasket.adapter.TopChampionnatAdapter;
 import com.mana.francebasket.model.ffbb.ChampionnatDetail;
 import com.mana.francebasket.model.ffbb.Championnats;
 import com.mana.francebasket.model.ffbb.ChampionnatsSettings;
@@ -38,38 +39,20 @@ public class FragmentDetail extends Fragment {
 	public static final String Name = "nameKey"; 
 	SharedPreferences sharedpreferences;
 	ChampionnatsSettings settings;
+    private TopChampionnatAdapter championnatAdapter;
+	private ListView listView;
 
 	String groupIdMemory = "";
 
 	@Override 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,  
-			Bundle savedInstanceState) {  
-		System.out.println("basket onCreateView  ");   
+			Bundle savedInstanceState) {   
 		return inflater.inflate(R.layout.custom_list_layout, container, false);  
 	}  
-
-    @Override 
-    public void onResume() { 
-    	super.onResume();
-        System.out.println("basket onResume  ");   
-    }    
-    
-    @Override 
-    public void onPause()  { 
-    	super.onPause();
-        System.out.println("basket onPause  ");   
-    } 
-    @Override 
-    public void onStart()  {  
-    	super.onStart();
-        System.out.println("basket onStart  ");   
-    } 
 
 	@Override 
 	public void onActivityCreated(Bundle savedInstanceState) {  
 		super.onActivityCreated(savedInstanceState);  
-
-		System.out.println("basket onActivityCreated  ");
 		
 		Bundle bundle = this.getArguments();
 		String championnatName = bundle.getString("name");
@@ -78,6 +61,8 @@ public class FragmentDetail extends Fragment {
 		String type = bundle.getString("type");
 		String idParents = bundle.getString("idParent");
 		String papa = bundle.getString("papa");
+		
+		listView = (ListView) getActivity().findViewById(R.id.custom_list);
 		
 		if(ChampionnatsFragment.championnatPere.contains(championnatName)){
 			ChampionnatsFragment.championnatPere.remove(ChampionnatsFragment.championnatPere.size() - 1);
@@ -150,31 +135,19 @@ public class FragmentDetail extends Fragment {
 			@Override
 			protected ArrayList<Values> doInBackground(Void... params) {
 				WebService webService = new WebService();
-				ArrayList<String> championnatNames = new ArrayList<String>();
 				
 				Championnats championnats = webService.getChampionnats(url);
 				ArrayList<Values> listChampionnat = championnats.getValues();
 
-
-				for (Values championnat : listChampionnat) {
-					championnatNames.add(championnat.getName());
-				}
-				
 				return listChampionnat;
 
 			};
 
 
 			protected void onPostExecute(final ArrayList<Values> result) {
-		        ListView listView = (ListView) getActivity().findViewById(R.id.custom_list);
+				championnatAdapter = new TopChampionnatAdapter(getActivity().getBaseContext(), R.layout.fragment_championnats, result);
 		        
-		        ArrayList<String> nameElements = new ArrayList<String>();
-		        
-		        for (Values championnat : result) {
-		        	nameElements.add(championnat.getName());
-		        	System.out.println(championnat.toString());
-				}
-		        listView.setAdapter(new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, nameElements));  
+				listView.setAdapter(championnatAdapter);			
 		           
 		        listView.setOnItemClickListener(new OnItemClickListener() {  
 		   
@@ -230,15 +203,11 @@ public class FragmentDetail extends Fragment {
 				else if(result.getGroups().getValues().size() > 1 )
 				{
 				idParent = id;
-				ListView listView = (ListView) getActivity().findViewById(R.id.custom_list);
-
-				ArrayList<String> nameElements = new ArrayList<String>();
-
-				for (Values value : result.getGroups().getValues()) {
-					nameElements.add(value.getName());
-				}
-				listView.setAdapter(new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, nameElements));  
-
+				
+				championnatAdapter = new TopChampionnatAdapter(getActivity().getBaseContext(), R.layout.fragment_championnats, result.getGroups().getValues());
+		        
+				listView.setAdapter(championnatAdapter);	
+				
 				listView.setOnItemClickListener(new OnItemClickListener() {  
 
 					@Override 
