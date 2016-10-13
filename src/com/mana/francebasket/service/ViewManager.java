@@ -1,5 +1,6 @@
 package com.mana.francebasket.service;
 
+import com.mana.francebasket.FavoriFragment;
 import com.mana.francebasket.FragmentDetail;
 import com.mana.francebasket.MessageFragment;
 import com.mana.francebasket.R;
@@ -75,22 +76,26 @@ public class ViewManager {
 		
 	}  
 	
-//	public static void openScoreChampionnatView(Activity activity, String id, String idGroup) {
-//		Fragment scoreChampionnatFragment = new ScoreChampionnatFragment(id, idGroup);  
-//		FragmentManager fragmentManager = ((FragmentActivity)activity).getSupportFragmentManager();  
-//		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();  
-//
-//		//check if the device is landscape or portrait 
-//		Configuration configuration = activity.getResources().getConfiguration();  
-//		int ori = configuration.orientation;  
-//
-//		fragmentTransaction.replace(R.id.frame_container, scoreChampionnatFragment);  
-//
-//		if(ori == configuration.ORIENTATION_PORTRAIT){  
-//			fragmentTransaction.addToBackStack(null);  
-//		}  
-//
-//		fragmentTransaction.commit();
-//	} 
+	public static void openFavorisView(FragmentActivity activity) {
+		
+		Fragment Favori = new FavoriFragment();  
+		FragmentManager fragmentManager = ((FragmentActivity)activity).getSupportFragmentManager();  
+		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();  
+
+		//check if the device is landscape or portrait 
+		Configuration configuration = activity.getResources().getConfiguration();  
+		int ori = configuration.orientation;  
+
+		fragmentTransaction.replace(R.id.frame_container, Favori);  
+
+		if(ori == configuration.ORIENTATION_PORTRAIT){  
+			fragmentTransaction.addToBackStack(null);  
+		}  
+
+		fragmentTransaction.commit();
+		
+		
+	}  
+
 	
 }

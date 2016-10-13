@@ -1,23 +1,24 @@
 package com.mana.francebasket.adapter;
 
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.View.OnLongClickListener;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-
 import com.mana.francebasket.R;
 import com.mana.francebasket.dialog.MaDialogBox;
 import com.mana.francebasket.model.ffbb.ChampionnatDetail;
 import com.mana.francebasket.model.ffbb.Match;
 import com.mana.francebasket.utilities.MesPreferences;
+
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.support.v4.app.FragmentActivity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class ClassementAdapter extends ArrayAdapter<Match> {
 
@@ -49,6 +50,8 @@ public class ClassementAdapter extends ArrayAdapter<Match> {
 			viewHolder.equipeNameHome = (TextView) convertView.findViewById(R.id.equipe_name_home);
 			viewHolder.equipeNameVisitor = (TextView) convertView.findViewById(R.id.equipe_name_visitor);
 			viewHolder.score = (TextView) convertView.findViewById(R.id.scores);
+			viewHolder.addHome = (Button) convertView.findViewById(R.id.add_home);
+			viewHolder.addVisitor = (Button) convertView.findViewById(R.id.add_visitor);
 
 			convertView.setTag(viewHolder);
 
@@ -62,12 +65,12 @@ public class ClassementAdapter extends ArrayAdapter<Match> {
 		viewHolder.score.setText(match.getScore());
 
 		
-		viewHolder.equipeNameHome.setOnLongClickListener(new OnLongClickListener() {
+		viewHolder.addHome.setOnClickListener(new OnClickListener() {
 			
 			@Override
-			public boolean onLongClick(View v) {
+			public void onClick(View v) {
 				AlertDialog.Builder builder = new AlertDialog.Builder(fragmentActivity);
-		        builder.setMessage("Voulez-vous ajouter cette équipe dans vos favoris?")
+		        builder.setMessage(R.string.ajout_equipe)//"Voulez-vous ajouter cette équipe dans vos favoris?")
 		               .setPositiveButton("OUI", new DialogInterface.OnClickListener() {
 		                   public void onClick(DialogInterface dialog, int id) {
 		                	   MesPreferences.addMatchToPreference(fragmentActivity, idChampionnat, idGroup, viewHolder.equipeNameHome.getText().toString());
@@ -82,16 +85,15 @@ public class ClassementAdapter extends ArrayAdapter<Match> {
 		        dialog.show(fragmentActivity.getSupportFragmentManager(), "1");
 				
 				
-				return true;
 			}
 		});
 		
-		viewHolder.equipeNameVisitor.setOnLongClickListener(new OnLongClickListener() {
+		viewHolder.addVisitor.setOnClickListener(new OnClickListener() {
 			
 			@Override
-			public boolean onLongClick(View v) {
+			public void onClick(View v) {
 				AlertDialog.Builder builder = new AlertDialog.Builder(fragmentActivity);
-		        builder.setMessage("Voulez-vous ajouter cette Ã©quipe dans vos favori?")
+		        builder.setMessage(R.string.ajout_equipe)
 		               .setPositiveButton("OUI", new DialogInterface.OnClickListener() {
 		                   public void onClick(DialogInterface dialog, int id) {
 		                	   MesPreferences.addMatchToPreference(fragmentActivity, idChampionnat, idGroup, viewHolder.equipeNameVisitor.getText().toString());
@@ -104,7 +106,6 @@ public class ClassementAdapter extends ArrayAdapter<Match> {
 		               });
 		        MaDialogBox dialog = new MaDialogBox(builder);
 		        dialog.show(fragmentActivity.getSupportFragmentManager(), "1");
-				return true;
 			}
 		});
 
@@ -116,6 +117,8 @@ public class ClassementAdapter extends ArrayAdapter<Match> {
 		TextView equipeNameHome;
 		TextView equipeNameVisitor;
 		TextView score;
+		Button addHome;
+		Button addVisitor;
 	}
 
 }

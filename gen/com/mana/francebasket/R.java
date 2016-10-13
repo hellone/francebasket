@@ -39,42 +39,50 @@ public final class R {
     }
     public static final class drawable {
         public static final int action_search=0x7f020000;
-        public static final int ajout=0x7f020001;
-        public static final int background_listview=0x7f020002;
-        public static final int basketball=0x7f020003;
-        public static final int cellule_shape=0x7f020004;
-        public static final int championnat=0x7f020005;
-        public static final int counter_bg=0x7f020006;
-        public static final int drawer_shadow=0x7f020007;
-        public static final int ic_communities=0x7f020008;
-        public static final int ic_drawer=0x7f020009;
-        public static final int ic_home=0x7f02000a;
-        public static final int ic_launcher=0x7f02000b;
-        public static final int ic_pages=0x7f02000c;
-        public static final int ic_people=0x7f02000d;
-        public static final int ic_photos=0x7f02000e;
-        public static final int ic_whats_hot=0x7f02000f;
-        public static final int list_item_bg_normal=0x7f020010;
-        public static final int list_item_bg_pressed=0x7f020011;
-        public static final int list_selector=0x7f020012;
-        public static final int settings_picto=0x7f020013;
+        public static final int add=0x7f020001;
+        public static final int add2=0x7f020002;
+        public static final int ajout=0x7f020003;
+        public static final int background_listview=0x7f020004;
+        public static final int ballon=0x7f020005;
+        public static final int basketball=0x7f020006;
+        public static final int cellule_shape=0x7f020007;
+        public static final int championnat=0x7f020008;
+        public static final int counter_bg=0x7f020009;
+        public static final int drawer_shadow=0x7f02000a;
+        public static final int ic_communities=0x7f02000b;
+        public static final int ic_drawer=0x7f02000c;
+        public static final int ic_home=0x7f02000d;
+        public static final int ic_launcher=0x7f02000e;
+        public static final int ic_pages=0x7f02000f;
+        public static final int ic_people=0x7f020010;
+        public static final int ic_photos=0x7f020011;
+        public static final int ic_whats_hot=0x7f020012;
+        public static final int list_item_bg_normal=0x7f020013;
+        public static final int list_item_bg_pressed=0x7f020014;
+        public static final int list_selector=0x7f020015;
+        public static final int settings_picto=0x7f020016;
+        public static final int terrain=0x7f020017;
+        public static final int trophee=0x7f020018;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a000e;
+        public static final int action_settings=0x7f0a0011;
         public static final int addChampionnatButton=0x7f0a0004;
-        public static final int championnat=0x7f0a0008;
-        public static final int championnat_name=0x7f0a000d;
-        public static final int counter=0x7f0a0007;
+        public static final int add_button1=0x7f0a0009;
+        public static final int add_button2=0x7f0a000e;
+        public static final int add_home=0x7f0a000a;
+        public static final int add_visitor=0x7f0a000f;
+        public static final int championnat=0x7f0a0007;
+        public static final int championnat_name=0x7f0a0010;
         public static final int custom_list=0x7f0a0003;
         public static final int drawer_layout=0x7f0a0000;
-        public static final int equipe_name_home=0x7f0a000a;
-        public static final int equipe_name_visitor=0x7f0a000c;
+        public static final int equipe_name_home=0x7f0a000b;
+        public static final int equipe_name_visitor=0x7f0a000d;
         public static final int frame_container=0x7f0a0001;
         public static final int icon=0x7f0a0005;
         public static final int list_slidermenu=0x7f0a0002;
-        public static final int scores=0x7f0a000b;
+        public static final int scores=0x7f0a000c;
         public static final int title=0x7f0a0006;
-        public static final int txtLabel=0x7f0a0009;
+        public static final int txtLabel=0x7f0a0008;
     }
     public static final class layout {
         public static final int activity_home=0x7f030000;
@@ -89,14 +97,19 @@ public final class R {
         public static final int home=0x7f090000;
     }
     public static final class string {
+        public static final int Mes_champ=0x7f060003;
+        public static final int Mes_equipes=0x7f060002;
         public static final int action_settings=0x7f060001;
+        public static final int add_champ=0x7f060004;
+        public static final int ajout_equipe=0x7f060007;
         public static final int app_name=0x7f060000;
         /**  Content Description 
          */
-        public static final int desc_list_item_icon=0x7f060005;
-        public static final int drawer_close=0x7f060004;
-        public static final int drawer_open=0x7f060003;
-        public static final int hello_world=0x7f060002;
+        public static final int desc_list_item_icon=0x7f06000a;
+        public static final int drawer_close=0x7f060009;
+        public static final int drawer_open=0x7f060008;
+        public static final int message_no_champ_favoris=0x7f060005;
+        public static final int message_no_team_favoris=0x7f060006;
     }
     public static final class style {
         /** 

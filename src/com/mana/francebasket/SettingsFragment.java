@@ -79,7 +79,7 @@ public class SettingsFragment extends Fragment {
 			protected void onPostExecute(final ChampionnatsSettings result) {
 				
 				if(result == null)
-					ViewManager.openMessageView(getActivity(), "Vous n'avez pas encore sélectionné de championnat dans vos favoris");	
+					ViewManager.openMessageView(getActivity(), getString(R.string.message_no_champ_favoris));	
 				else{
 				settingsAdapter = new SettingsAdapter(getActivity().getBaseContext(), R.layout.fragment_settings, result);
 

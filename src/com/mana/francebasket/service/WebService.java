@@ -128,10 +128,6 @@ public class WebService {
 		for (MatchSetting matchSetting : matchSettings) {
 			mesMatchs.add(searchMatchByTeamName(matchSetting.getTeamName(), matchSetting.getId(), matchSetting.getGroupId()));	
 		}
-//		mesMatchs.add(searchMatchByTeamName("moissy", Consts.promoExcelRegionID, Consts.regionGroupePouleA));	
-//		mesMatchs.add(searchMatchByTeamName("moissy", Consts.promoExcelDepartID,Consts.promoHonorGroupeCentre));
-//		mesMatchs.add(searchMatchByTeamName("moissy", Consts.honorDepartID,Consts.honorGroupeSud));
-//		mesMatchs.add(searchMatchByTeamName("moissy", Consts.honorDepartID,Consts.honorGroupeCentre));
 
 		return mesMatchs;
 	}

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import android.content.ClipData;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.opengl.Visibility;
 import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -15,6 +16,7 @@ import android.view.View.OnLongClickListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -47,7 +49,10 @@ public class FavoriAdapter extends ArrayAdapter<Match> {
 			viewHolder.equipeNameHome = (TextView) convertView.findViewById(R.id.equipe_name_home);
 			viewHolder.equipeNameVisitor = (TextView) convertView.findViewById(R.id.equipe_name_visitor);
 			viewHolder.score = (TextView) convertView.findViewById(R.id.scores);
-
+			viewHolder.addHome = (Button) convertView.findViewById(R.id.add_home);
+			viewHolder.addVisitor = (Button) convertView.findViewById(R.id.add_visitor);
+			viewHolder.addHome.setVisibility(View.GONE);
+			viewHolder.addVisitor.setVisibility(View.GONE);
 			convertView.setTag(viewHolder);
 
 		} else {
@@ -89,6 +94,8 @@ public class FavoriAdapter extends ArrayAdapter<Match> {
 		TextView equipeNameHome;
 		TextView equipeNameVisitor;
 		TextView score;
+		Button addHome;
+		Button addVisitor;
 	}
 	
 	private final class MyTouchListener implements OnTouchListener {

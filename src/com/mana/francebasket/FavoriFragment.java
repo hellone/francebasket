@@ -15,6 +15,7 @@ import android.widget.ListView;
 import com.mana.francebasket.adapter.FavoriAdapter;
 import com.mana.francebasket.model.ffbb.Match;
 import com.mana.francebasket.model.ffbb.MatchSetting;
+import com.mana.francebasket.service.ViewManager;
 import com.mana.francebasket.service.WebService;
 import com.mana.francebasket.utilities.MesPreferences;
 
@@ -62,7 +63,6 @@ public class FavoriFragment extends Fragment {
 
 				WebService webService = new WebService();
 				ArrayList<Match> result = webService.getMesMatchsFavori(matchSettings);
-				System.out.println("Resultat  :  " + result.toString());
 
 				return result;
 
@@ -71,8 +71,8 @@ public class FavoriFragment extends Fragment {
 
 			protected void onPostExecute(final ArrayList<Match> result) {
 
-				if(result == null)
-					return;
+				if(result.isEmpty())
+					ViewManager.openMessageView(getActivity(), getString(R.string.message_no_team_favoris));	
 				favoriAdapter = new FavoriAdapter(getActivity().getBaseContext(), R.layout.fragment_scores_championnat, result);
 
 				classementList.setAdapter(favoriAdapter);

@@ -7,7 +7,8 @@
     <ListView
         android:id="@+id/custom_list"
         android:layout_width="fill_parent"
-        android:layout_height="382dp"
+        android:layout_height="396dp"
+        android:layout_weight="0.00"
         android:clickable="false"
         android:dividerHeight="1dp"
         android:drawSelectorOnTop="false"
@@ -18,9 +19,11 @@
     <Button
         android:id="@+id/addChampionnatButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"           
+        android:layout_height="0dp"
         android:layout_weight="0.04"
-        android:text="Ajout ce championnat à ses favoris"
+        android:text="@string/add_champ"
         android:visibility="gone" />
+
 
 </LinearLayout>

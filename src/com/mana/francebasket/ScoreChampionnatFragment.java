@@ -1,6 +1,8 @@
 package com.mana.francebasket;
 
 
+import java.util.ArrayList;
+
 import com.mana.francebasket.adapter.ClassementAdapter;
 import com.mana.francebasket.model.ffbb.ChampionnatDetail;
 import com.mana.francebasket.service.WebService;
@@ -15,6 +17,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -61,7 +64,7 @@ public class ScoreChampionnatFragment extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-				MesPreferences.addChampionnatToPreference(getActivity(), idChampionnat, idGroup, championnatName, ChampionnatsFragment.championnatPere.toString());
+				MesPreferences.addChampionnatToPreference(getActivity(), idChampionnat, idGroup, championnatName, getChampionnatParentNames(ChampionnatsFragment.championnatPere));
 				showToast("Ajout du Championnat id = " + idChampionnat + " dans les preferences");
 			}
 		});
@@ -74,6 +77,15 @@ public class ScoreChampionnatFragment extends Fragment {
 	}  
 
 
+	private String getChampionnatParentNames(ArrayList<String> names){
+		String result = "";
+		 
+			for (String name : names) {
+				result = result + name + "\n";
+			}
+			
+		return result;
+	}
 	private void getDatas() {
 		new AsyncTask<Void, Void, ChampionnatDetail>() {
 			

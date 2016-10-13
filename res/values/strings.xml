@@ -3,26 +3,32 @@
 
     <string name="app_name">FranceBasket</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="Mes_equipes">Mes équipes</string>
+    <string name="Mes_champ">Mes championnats</string>
+    <string name="add_champ">Ajouter ce championnat à vos favoris</string>
+    <string name="message_no_champ_favoris">Vous n\'avez pas encore sélectionné de championnat dans vos favoris</string>
+    <string name="message_no_team_favoris">Vous n\'avez pas encore sélectionné d\'équipe dans vos favoris</string>
+     <string name="ajout_equipe">Voulez-vous ajouter cette équipe à vos favoris?</string>  
+    
+    
+    
  
  <string name="drawer_open">Slider Menu Opened</string>
     <string name="drawer_close">Slider Menu Closed</string>
      
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">
-        <item >Derniers matchs favori</item>
-        <item >Ajout dans mes favoris un championnat</item>
-        <item >Mes championnats favori</item>
-        <item >Settings</item>        
+        <item >Gérer mes favoris</item>
+        <item >Mes équipes</item>
+        <item >Mes championnats</item>    
     </string-array>
      
     <!-- Nav Drawer List Item Icons -->
     <!-- Keep them in order as the titles are in -->
     <array name="nav_drawer_icons">
-        <item>@drawable/basketball</item>
-        <item>@drawable/ajout</item>
-        <item>@drawable/championnat</item>
-        <item>@drawable/settings_picto</item>        
+        <item>@drawable/add2</item>        
+        <item>@drawable/ballon</item>
+        <item>@drawable/trophee</item>      
     </array>
      
     <!-- Content Description -->

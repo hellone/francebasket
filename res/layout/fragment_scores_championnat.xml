@@ -1,37 +1,67 @@
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="72dip"
+    android:background="@drawable/background_listview"
     android:clickable="false"
-    android:duplicateParentState="true"
     android:focusableInTouchMode="false"
+    android:gravity="center_vertical"
     android:longClickable="false"
     android:orientation="horizontal"
-    android:paddingBottom="6dip"
-    android:paddingTop="4dip"
-    android:background="@drawable/background_listview" >
+    android:padding="10dip" >
+
+    <LinearLayout
+        android:id="@+id/add_button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/add_home"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/add" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/equipe_name_home"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight=".4"
-        android:gravity="left"
-        android:paddingLeft="10dp" />
- 
+        android:fontFamily="sans-serif-condensed" 
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".30"
+        android:orientation="vertical" />
+
     <TextView
         android:id="@+id/scores"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight=".5"
-        android:gravity="center" />
- 
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".30"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center|center_vertical"
+        android:orientation="vertical"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/equipe_name_visitor"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight=".4"
-        android:gravity="left" />
+        android:fontFamily="sans-serif-condensed"         
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".30"
+        android:orientation="vertical" />
 
- 
+    <LinearLayout
+        android:id="@+id/add_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/add_visitor"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/add" />
+    </LinearLayout>
+
 </LinearLayout>
